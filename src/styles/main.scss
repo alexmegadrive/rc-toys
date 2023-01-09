@@ -1,0 +1,13 @@
+.main {
+  width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  grid-area: main;
+  gap: 25px;
+  padding: 0 15px;
+
+  @media (max-width: 1640px) {
+    width: calc(600px + (1599 - 600) * ((100vw - 655px) / (1400 - 320)));
+  }
+}

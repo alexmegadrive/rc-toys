@@ -22,4 +22,8 @@ Open in browser - https://alexmegadrive.github.io/rc-toys/
 - Modal window for order information performing validation on all input fields
 
 
+#### Commands
 
+- 'npm install' for installing dependencies
+- 'npm run start' for starting in localhost
+- 'npm run dev' for building project to dist folder

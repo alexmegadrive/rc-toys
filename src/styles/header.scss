@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  z-index: 1500;
+  position: fixed;
+  grid-area: hd;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  border-radius: 0px 0 20px 20px;
+  background: white;
+  filter: drop-shadow(0px -1px 4px black);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1570px;
+    padding: 0 40px;
+  }
+
+  &__logo {
+    width: 340px;
+    height: 100px;
+    background: url('./assets/img/logo.png') no-repeat;
+    background-position: left;
+    background-size: contain;
+  }
+
+  &__cart {
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    background: url('./assets/img/cart.png') no-repeat;
+    background-size: cover;
+  }
+
+  &__cart-container {
+    display: flex;
+    align-items: center;
+  }
+  &__cart-btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: $layout-color;
+    font-size: 1.6rem;
+    transition: background 0.1s ease-in;
+    &:hover {
+      background: rgba(255, 166, 0, 0.677);
+    }
+  }
+
+  &__money-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(176, 173, 173);
+    font-size: 1.6rem;
+  }
+
+  &__money-amount {
+    padding: 0 10px;
+    color: green;
+    &::before {
+      content: '$';
+    }
+  }
+
+  &__product-amount {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transform: translate(40%, -40%);
+    border-radius: 50%;
+    background: green;
+    color: white;
+    font-size: 1rem;
+  }
+}
