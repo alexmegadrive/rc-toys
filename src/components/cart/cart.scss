@@ -160,6 +160,11 @@
     background: url('/src/assets/img/garbage.svg') no-repeat;
     background-size: contain;
     cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: rotate(35deg);
+    }
   }
 
   .item__cart-countControlBtns {
