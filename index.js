@@ -2200,7 +2200,7 @@ class ProductView {
             <img class="product__img-main" src="${product.photo[0]}"></img>
           </div>
           <div class="slider__wrapper-additional">
-            <img class="product__img-additional" src=${product.photo[0]}></img>
+            <img class="product__img-additional product__img-additional--active" src=${product.photo[0]}></img>
             <img class="product__img-additional" src=${product.photo[1]}></img>
             <img class="product__img-additional" src=${product.photo[2]}></img>
           </div>
@@ -2344,7 +2344,7 @@ class ProductView {
         additionalsImg.forEach((img) => {
             img.addEventListener('mouseover', (e) => {
                 const target = e.target;
-                additionalsImg.forEach(element => {
+                additionalsImg.forEach((element) => {
                     element.classList.remove('product__img-additional--active');
                 });
                 target.classList.add('product__img-additional--active');
