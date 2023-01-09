@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+$layout-color: #f0f0f0;
+
+@import 'styles/normalize';
+@import 'styles/body';
+@import 'styles/header';
+@import 'styles/footer';
+@import 'styles/main';
+@import 'components/cart/cart';
+@import 'components/catalog/catalog';
+@import 'components/product/product';
+@import 'styles/page404';
+@import 'styles/modal';
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}

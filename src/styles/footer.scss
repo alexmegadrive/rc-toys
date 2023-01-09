@@ -1,0 +1,55 @@
+.footer {
+  display: flex;
+  grid-area: ft;
+  justify-content: center;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+    width: 1600px;
+  }
+
+  .github-link__madknight,
+  .github__alexmegadrive {
+    cursor: pointer;
+    margin: 10px;
+    background: url('./assets/img/github_logo.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .rsschool {
+    cursor: pointer;
+    background: url('./assets/img/rs_school_logo.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 120px;
+    height: 80px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .production-year {
+    display: block;
+    margin: 0 auto;
+    color: #0a0e46;
+    line-height: 0;
+    text-align: center;
+    font-weight: 700;
+  }
+}
