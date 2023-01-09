@@ -101,7 +101,7 @@ class CartView {
     const paginationContainer = document.querySelector('#pagination');
     if (paginationContainer) paginationContainer.innerHTML = '';
     if (count > 1) {
-      if (paginationContainer) paginationContainer.innerHTML = 'Pages: ';
+      if (paginationContainer) paginationContainer.innerHTML = 'Page: ';
       for (let i = 1; i <= count; i++) {
         const pagBtn = document.createElement('button');
         pagBtn.classList.add('pagination__button');
@@ -119,7 +119,7 @@ class CartView {
 
   addChangeProductsPerPageListeners(cartItems: Array<CartItem>) {
     const itemsPerPageSelector = document.querySelector('#cartItems-per-page-selector') as HTMLSelectElement;
-    itemsPerPageSelector.value = String(this.productsPerPage)
+    itemsPerPageSelector.value = String(this.productsPerPage);
     if (itemsPerPageSelector) {
       itemsPerPageSelector.addEventListener('change', (e) => {
         const value = (e.target as HTMLSelectElement).value;

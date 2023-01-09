@@ -49,7 +49,6 @@
   }
 
   &__content {
-
     padding: 0;
   }
 
@@ -64,7 +63,7 @@
     grid-column: span 3;
   }
 
-  &>.checkbox__fake {
+  & > .checkbox__fake {
     margin-right: 0;
   }
 }
@@ -289,19 +288,19 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
+  border: none;
 
   &:hover {
     border: 2px solid orange;
+    border-radius: 4px;
   }
 
-  &+& {
+  & + & {
     margin-left: 3px;
   }
 
   &--active {
-    background: orange;
-    color: white;
-    border: transparent;
+    border-bottom: 2px solid orange;
     cursor: default !important;
   }
 }
@@ -354,7 +353,7 @@
   flex-direction: row-reverse;
   align-items: center;
 
-  &+& {
+  & + & {
     margin-top: 5px;
   }
 
