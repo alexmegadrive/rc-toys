@@ -2205,12 +2205,17 @@ class ProductView {
             <img class="product__img-additional" src=${product.photo[2]}></img>
           </div>
           <div class="order">
-            <div class="order__price"><span class="order__text">Price:</span> <span class="order__number">${product.price}</span><span class="order__currency">$</span></div>
+            <div class="order__price"><span class="order__text">Price:</span>
+               <span class="order__number">${product.price}</span>
+              <span class="order__currency">$</span>
+            </div>
             <div class="item__cart-container" data-cartBtn-id="${product.id}">
             ${this.appView.renderCartBtnContainer(product.id, itemCountInCart)}
             </div>
             <div>
-              <button class="item__cart-order" data-cart-action="order" data-product-id="${product.id}">
+              <button class="item__cart-order"
+              data-cart-action="order"
+              data-product-id="${product.id}">
               Order now
               </button>
             </div>
@@ -2223,7 +2228,6 @@ class ProductView {
           <p class="description__text">${product.description}</p>
         </div>
         <div class="product__characteristic-wrapper">
-          <h2 class="product__characteristic-title">Characteristic</h2>
           <ul class="characteristic">
             <li class="item-char characteristic__item">
               <h4 class="item-char__title">Classification</h4>
