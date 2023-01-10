@@ -10,7 +10,8 @@
     "dev": "webpack",
     "prod": "webpack --node-env=production",
     "clear": "rd /s /q Online-Store",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "prettier": "prettier --write"
   },
   "keywords": [],
   "author": "Alexmegadrive & MaDKnight404",
