@@ -2383,7 +2383,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.locationHandler = void 0;
 const index_1 = __webpack_require__(/*! ../index */ "./src/index.ts");
 const getQueryParams_1 = __webpack_require__(/*! ../utils/getQueryParams */ "./src/utils/getQueryParams.ts");
-const isQueryCorrect_1 = __webpack_require__(/*! ../utils/isQueryCorrect */ "./src/utils/isQueryCorrect.ts");
 const locationHandler = async () => {
     const url = document.location.href;
     const queryParams = (0, getQueryParams_1.getQueryParams)(url);
@@ -2417,12 +2416,13 @@ const locationHandler = async () => {
     }
     //get route from routes map
     let route;
-    if (!(0, isQueryCorrect_1.isQueryCorrect)(queryParams, isQueryCorrect_1.correctQuery)) {
-        route = routes['404'];
-    }
-    else {
-        route = routes[location] || routes['404'];
-    }
+    //for unhandled query params
+    // if (!isQueryCorrect(queryParams, correctQuery)) {
+    //   route = routes['404'];
+    // } else {
+    //   route = routes[location] || routes['404'];
+    // }
+    route = routes[location] || routes['404'];
     document.title = route.title;
     route.handler(queryParams);
 };
@@ -3501,45 +3501,6 @@ function getQueryParams(url) {
     return params;
 }
 exports.getQueryParams = getQueryParams;
-
-
-/***/ }),
-
-/***/ "./src/utils/isQueryCorrect.ts":
-/*!*************************************!*\
-  !*** ./src/utils/isQueryCorrect.ts ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.isQueryCorrect = exports.correctQuery = void 0;
-exports.correctQuery = {
-    id: '',
-    category: '',
-    brand: '',
-    color: '',
-    name: '',
-    priceMin: '',
-    priceMax: '',
-    weightMin: '',
-    weightMax: '',
-    sortType: '',
-    cartPage: '',
-    cartItemsPerPage: '',
-    cartModal: '',
-    catalogDisplayMode: '',
-};
-function isQueryCorrect(requiredObj, correctObj) {
-    for (const key in requiredObj) {
-        // eslint-disable-next-line no-prototype-builtins
-        if (!correctObj.hasOwnProperty(key)) {
-            return false;
-        }
-    }
-    return true;
-}
-exports.isQueryCorrect = isQueryCorrect;
 
 
 /***/ }),
