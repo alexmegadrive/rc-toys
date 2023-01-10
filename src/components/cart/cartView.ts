@@ -209,14 +209,12 @@ class CartView {
 
   showCartModal() {
     const modal = document.querySelector('.modal') as HTMLElement;
-    modal.style.opacity = '1';
-    modal.style.zIndex = '1';
+    modal.classList.add('modal--active');
   }
 
   hideCartModal() {
     const modal = document.querySelector('.modal') as HTMLElement;
-    modal.style.opacity = '0';
-    modal.style.zIndex = '-1';
+    modal.classList.remove('modal--active');
   }
 
   addValidationListeners() {
@@ -278,6 +276,7 @@ class CartView {
           event.preventDefault();
         }
         if (event.key !== 'Backspace' && event.target.value.length === 2) {
+          if (Number(event.target.value) > 12) event.target.value = '12';
           event.target.value += '/';
         }
       }

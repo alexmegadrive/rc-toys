@@ -32,7 +32,7 @@ export function validateCardCVV(value: string) {
   return regex.test(value);
 }
 export function validateCardExpDate(value: string) {
-  const regex = /(1[0-2]|0[1-9])\/([2][2-9]|[3][0-9])/;
+  const regex = /(1[0-2]|0[1-9])\/([2][2-9]|[3-9][0-9])/;
   return regex.test(value);
 }
 
