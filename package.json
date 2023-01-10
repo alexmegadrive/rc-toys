@@ -1,7 +1,7 @@
 {
   "name": "online-store",
   "version": "1.0.0",
-  "description": "Для установки пакетов используйте команду npm install",
+  "description": "use 'npm install' for installing packet dependencies",
   "main": "index.ts",
   "scripts": {
     "predeploy": "npm run dev",
@@ -11,7 +11,7 @@
     "prod": "webpack --node-env=production",
     "clear": "rd /s /q Online-Store",
     "test": "jest --verbose",
-    "prettier": "prettier --write"
+    "prettier": "npx prettier --write"
   },
   "keywords": [],
   "author": "Alexmegadrive & MaDKnight404",
