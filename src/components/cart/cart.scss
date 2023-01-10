@@ -425,3 +425,14 @@
     }
   }
 }
+.item-cart__price-number {
+  &::before {
+    content: '$';
+  }
+}
+
+.product__stock-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

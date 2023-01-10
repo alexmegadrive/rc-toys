@@ -68,16 +68,17 @@ class CartView {
         <div class="item-cart__number">${1 + cartItems.findIndex((el) => el.id === element.id)}</div>
         <a class="link" href="./#product?id=${element.id}">
           <img class=item-cart__img src="${element.details.photo[0]}" alt=""></a>
-        <div class="item__cart-container item__cart-container_transparent" data-cartBtn-id="${element.id}">
-      ${this.appView.renderCartBtnContainer(element.id, itemCountInCart)}
-      </div>
-      <div class="product__stock-amount">Stock: ${element.details.stock}</div>
 
+          <div class="product__stock-container">
+            <div class="item__cart-container item__cart-container_transparent" data-cartBtn-id="${element.id}">
+            ${this.appView.renderCartBtnContainer(element.id, itemCountInCart)}
+           </div>
+           <div class="product__stock-amount">Stock: ${element.details.stock}</div>
+          </div>
+     
         <div class="item-cart__amount">
           <div class="item-cart__price">
-            <span class="item-cart__price-number">${
-              element.details.price
-            }</span> <span class="item-cart__price-number"> $</span>
+            <span class="item-cart__price-number">${element.details.price}
           </div>
           <button class="item-cart__btn-delete" data-product-id="${element.id}" data-cart-action="remove"></button>
         </div>
