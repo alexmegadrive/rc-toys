@@ -68,6 +68,7 @@ class CartModel {
     const itemIndex = this.items.findIndex((el) => el.id == id);
     this.items.splice(itemIndex, 1);
     this.updateCartTotal();
+    this._updateView(id, -1, this.totalSum, this.totalItems);
   }
 
   increaseItem(id: number) {
@@ -90,8 +91,6 @@ class CartModel {
       }
       if (this.items[itemIndex].count === 0) {
         this.removeItem(id);
-        this.updateCartTotal();
-        this._updateView(id, -1, this.totalSum, this.totalItems);
       }
     }
   }
