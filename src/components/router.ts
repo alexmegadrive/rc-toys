@@ -45,11 +45,14 @@ export const locationHandler = async () => {
 
   //get route from routes map
   let route: Route;
-  if (!isQueryCorrect(queryParams, correctQuery)) {
-    route = routes['404'];
-  } else {
-    route = routes[location] || routes['404'];
-  }
+
+  //for unhandled query params
+  // if (!isQueryCorrect(queryParams, correctQuery)) {
+  //   route = routes['404'];
+  // } else {
+  //   route = routes[location] || routes['404'];
+  // }
+  route = routes[location] || routes['404'];
 
   document.title = route.title;
   route.handler(queryParams);
