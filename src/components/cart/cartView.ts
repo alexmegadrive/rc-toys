@@ -120,8 +120,8 @@ class CartView {
 
   addChangeProductsPerPageListeners(cartItems: Array<CartItem>) {
     const itemsPerPageSelector = document.querySelector('#cartItems-per-page-selector') as HTMLSelectElement;
-    itemsPerPageSelector.value = String(this.productsPerPage);
     if (itemsPerPageSelector) {
+      itemsPerPageSelector.value = String(this.productsPerPage);
       itemsPerPageSelector.addEventListener('change', (e) => {
         const value = (e.target as HTMLSelectElement).value;
         const productsPerPage = Number(value);
