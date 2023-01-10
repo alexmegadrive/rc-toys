@@ -1891,8 +1891,10 @@ class CatalogView {
             if (e.key === 'Enter') {
                 const shadow = document.querySelector('.body-shadow');
                 const suggestions = document.querySelector('.suggestions');
-                if (e.target instanceof HTMLInputElement)
+                if (e.target instanceof HTMLInputElement) {
+                    e.target.classList.remove('filters__search--focused');
                     handler(e.target.value);
+                }
                 if (shadow)
                     shadow.remove();
                 if (suggestions)
