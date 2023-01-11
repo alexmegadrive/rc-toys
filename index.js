@@ -962,6 +962,9 @@ class CartView {
                             break;
                     }
                     this.renderCartItems(cartItems);
+                    if (this.appliedPromoCodes.length != 0) {
+                        this.updateTotalPrice();
+                    }
                 }
             });
         }
