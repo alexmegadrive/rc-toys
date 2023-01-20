@@ -7,6 +7,7 @@ Open in browser - https://alexmegadrive.github.io/rc-toys/
 - Application works as  SPA (single-page application)
 - Hash routing
 - 404 page and redirects
+- Implemented testing via Jest
 
 ### Catalog page features
 - Query parameters added when filters changing, and filters are restored from url query parameters when opening in a new page
