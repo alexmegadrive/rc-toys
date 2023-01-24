@@ -1,4 +1,4 @@
-# RC-Toys - SPA online-store made on Valilla JS
+# RC-Toys - SPA online-store made on Vanilla JS
 
 Open in browser - https://alexmegadrive.github.io/rc-toys/
 
@@ -25,6 +25,6 @@ Open in browser - https://alexmegadrive.github.io/rc-toys/
 
 #### Commands
 
-- 'npm install' for installing dependencies
-- 'npm run start' for starting in localhost
-- 'npm run dev' for building project to dist folder
+- `npm install` for installing dependencies
+- `npm run start` for starting in localhost
+- `npm run dev` for building project to dist folder
