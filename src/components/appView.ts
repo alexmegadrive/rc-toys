@@ -1,5 +1,5 @@
 import { getQueryParams } from '../utils/getQueryParams';
-
+import qs from 'qs';
 //class for common render functions
 class AppView {
   updateCartItemsTotal(id: number, itemCountInCart: number, totalSum: number, totalCount: number) {
@@ -45,11 +45,11 @@ class AppView {
     else value = value.toLowerCase();
     const url = document.location.href;
     const queryParams = getQueryParams(url);
-
-    let path = url.split('?')[0];
+    console.log('queryParams :', queryParams);
 
     if (key in queryParams && (key == 'color' || key == 'brand' || key == 'category')) {
       // if key is color or brand or category
+
       if (!queryParams[key].split(',').includes(value)) {
         // and  if there is no such value, add it
         const keyArr = queryParams[key].split(',');
@@ -66,22 +66,12 @@ class AppView {
       }
     } else {
       // not category/brand/color,  rewrite exising key
-      queryParams[key] = value.toString().split(' ').join('%20');
+      queryParams[key] = value.toString().split(' ').join('%2C');
     }
 
-    // constructing query string
-    let queryString = '';
-    const queryArr: Array<string> = [];
-    for (const key in queryParams) {
-      if (Object.prototype.hasOwnProperty.call(queryParams, key)) {
-        if (queryParams[key].length > 0) {
-          const element = `${key}=${queryParams[key]}`;
-          if (element) queryArr.push(element);
-        } else delete queryParams[key];
-      }
-    }
-    path = path + (Object.keys(queryParams).length > 0 ? '?' : '');
-    queryString = queryArr.length > 0 ? queryArr.join('&') : '';
+    const path = url.split('?')[0] + (Object.keys(queryParams).length > 0 ? '?' : '');
+    const queryString = qs.stringify(queryParams).split('%252C').join('%2C');
+
     window.history.pushState('Catalog', 'Catalog | RC Toys', path + queryString);
   }
 }
